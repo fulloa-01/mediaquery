@@ -12,22 +12,25 @@ header{
 }
 
 
-.container-flex{
+.container-1{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    
 
 }
 
-.container-flex i{
+.container-1 i{
     margin-left: 3%;
 }
-.container-flex h2{
+.container-1 h2{
     font-size: 5vw;
     margin-left: 3%;
+    margin-bottom: 0%;
+    align-items: center;
 }
-.container-flex span{
+.container-1 span{
     margin: auto;
     margin-right: 7%;
 }
@@ -47,10 +50,13 @@ menu{
 }
 
 .filtros {
-    text-align: center; display: flex; flex-direction: column;
+    text-align: center; 
+    display: flex; 
+    flex-direction: column;
     }
-    .filtros div { margin-bottom: 30px;
-    }
+.filtros div { 
+    margin-bottom: 30px;
+}
 
 
 select{
@@ -59,35 +65,39 @@ select{
 }    
 
 
-.card-principal {
+.card-1 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-    height: 100%;       
+
+    background-color: white;
+    color: black;       
   }
 
-.card {
+.card-2 {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
-
+    background-color: white;
+    color: black;
     display: none;
+    
        
   }
 
-.card h4,p{
+
+.card-2 h4{
     margin:2%;
 }
-
-
-
-.pagination{
-    padding: 0%;
-    margin-left: 5%;
-    margin-right: 5%;
+button{
+    padding: 2%;
+    color: white;
+    background-color: #1B262C;
+    width: 30%;
 }
+
 
 ul{
     display: flex;
@@ -131,6 +141,18 @@ footer{
     align-content: center;
 }
 
+.con-pag{
+    grid-area: pag;
+    background-color: #3282B8;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding-top: 06px;
+}
+
+
+
 h4{
     margin: 0%;
 }
@@ -139,53 +161,69 @@ h4{
 
 
 
-.grid-container{
+.grid-general{
     display: grid;
     /* grid-template-rows: 1fr 1fr 10fr 1fr;     */
-    grid-template-rows: 10% 10% auto 10%;
+    grid-template-rows: 10% 10% auto 6% 10%;
     grid-template-areas:
     "header"
     "menu"
     "main"
+    "pag"
     "footer";
     height: 100vh;
 
-
-
 }
-@media (min-width: 576px) { 
 
-    .grid-container{
+
+
+/* Medida para pantalla sobre 576px */
+@media (min-width: 577px) { 
+
+    .grid-general{
         display: grid;
         grid-template-columns: 15% auto;    
-        grid-template-rows: 15% auto 15%;
+        grid-template-rows: 10% auto 15% 15%;
         grid-template-areas:
         "header menu"
         "header main"
-        "footer main";
+        "header main"
+        "footer pag";
         height: 100vh;
 
     }
 
     .cont-menu{
         display: flex;
+        padding-top: 20px;
     }
 
     .cont-menu ul{
+        margin-top: 50px;
         flex-wrap: wrap;
         flex-direction: column;
         font-size: 1.5vw;
     }
 
-    .container-flex h2{
+    .container-1{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        align-items: baseline;
+        margin-top: 5%;
+    
+    }
+
+    .container-1 h2{
         font-size: 2vw;
     }
 
-    .container-flex i{
+    .container-1 i{
         font-size: 2vw;
     }
 
-    .container-flex span{
+    .container-1 span{
         display: none;
     }
 
@@ -195,7 +233,7 @@ h4{
         grid-area: main;
         display: grid;
         grid-template-columns: auto auto auto auto;
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: auto auto;
         background-color: #3282B8;
         color: white;
         justify-content: center;
@@ -206,19 +244,51 @@ h4{
     
     }
     
-    .card,.card-principal{
-        display: grid;
+    .card-2,.card-1{
+    
         gap: 10px;
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         align-items: center;
-        height: 100%; 
+     
     }
+
+    main img{
+        max-width: 100%;
+    }
+
+    
+
+    /* .card-principal h4{
+        font-size: 2vw;
+    }
+
+    .card h4{
+        font-size: 2vw;
+        margin: 0%;
+    } */
+
+
+    button{
+        padding: 4%;
+        color: white;
+        background-color: #1B262C;
+        width: 80%;
+    }
+
+    .con-pag{
+        display: flex;
+        width: 100%;
+        
+    }
+
 
     .footer{
         padding:0%;
         font-size: 100%;
+        align-items: center;
+        font-size: 1rem;
     }
 
 
